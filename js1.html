@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+<body>
+  
+    <script src="script.js">
+    
+    function submitQuiz() {
+        var score = 0;
+        const totalQuestions = 10;
+
+        // Correct answers array
+        const correctAnswers = ["A", "C", "B", "C", "A", "A", "A", "A", "A", "C"];
+
+        // Loop through each question
+        for (var i = 1; i <= totalQuestions; i++) {
+            const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selectedOption && selectedOption.value === correctAnswers[i - 1]) {
+                score++;
+            }
+        }
+
+        // Display result
+        const resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = `<h4>Your Score: ${score}/${totalQuestions}</h4>`;
+    }
+
+</script>
+    
+<!---
+<button class="btn btn-primary" type="button" disabled>
+        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+        <span class="visually-hidden" role="status">Loading...</span>
+      </button>
+      <button class="btn btn-primary" type="button" disabled>
+        <span class="spinner-border  spinner-border-sm" aria-hidden="true"></span>
+        <span role="status">Loading...</span>
+        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
+         aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
+          </div>
+      </button>
+    -->
+<!-- HTML -->
+
+
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="text-center mb-4">MCQ Quiz</h2>
+    <form id="quizForm">
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. What does HTML stand for?</p>
+            <ul class="options">
+                <li><input type="radio" name="q1" value="A"> Hyper Text Markup Language</li>
+                <li><input type="radio" name="q1" value="B"> Home Tool Markup Language</li>
+                <li><input type="radio" name="q1" value="C"> Hyperlinks and Text Markup Language</li>
+            </ul>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. Who is making the Web standards?</p>
+            <ul class="options">
+                <li><input type="radio" name="q2" value="A"> Google</li>
+                <li><input type="radio" name="q2" value="B"> Microsoft</li>
+                <li><input type="radio" name="q2" value="C"> The World Wide Web Consortium</li>
+            </ul>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="question">
+            <p>3. Which tag is used to create a table row in HTML</p>
+            <ul class="options">
+                <li><input type="radio" name="q3" value="A">(td )</li>
+                <li><input type="radio" name="q3" value="B"> (tr)</li>
+                <li><input type="radio" name="q3" value="C">(table) </li>
+            </ul>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="question">
+            <p>4. Which is not a JavaScript Framework?</p>
+            <ul class="options">
+                <li><input type="radio" name="q4" value="A"> Python Script</li>
+                <li><input type="radio" name="q4" value="B"> JQuery</li>
+                <li><input type="radio" name="q4" value="C"> Django</li>
+            </ul>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="question">
+            <p>5. Which is used for Connect To Database?</p>
+            <ul class="options">
+                <li><input type="radio" name="q5" value="A"> PHP</li>
+                <li><input type="radio" name="q5" value="B"> HTML</li>
+                <li><input type="radio" name="q5" value="C"> JS</li>
+            </ul>
+        </div>
+
+        <!-- Question 6 -->
+        <div class="question">
+            <p>6. Which CSS property controls the transparency of an element?</p>
+            <ul class="options">
+                <li><input type="radio" name="q6" value="A"> visibility</li>
+                <li><input type="radio" name="q6" value="B">display </li>
+                <li><input type="radio" name="q6" value="C">opacity </li>
+            </ul>
+        </div>
+
+        <!-- Question 7 -->
+        <div class="question">
+            <p>7. How do you declare a JavaScript variable?</p>
+            <ul class="options">
+                <li><input type="radio" name="q7" value="A"> var myVariable;</li>
+                <li><input type="radio" name="q7" value="B"> myVariable = var;</li>
+                <li><input type="radio" name="q7" value="C"> v myVariable;</li>
+            </ul>
+        </div>
+
+        <!-- Question 8 -->
+        <div class="question">
+            <p>8. What does CSS stand for?</p>
+            <ul class="options">
+                <li><input type="radio" name="q8" value="A"> Cascading Style Sheets</li>
+                <li><input type="radio" name="q8" value="B"> Creative Style Sheets</li>
+                <li><input type="radio" name="q8" value="C"> Colorful Style Sheets</li>
+            </ul>
+        </div>
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>9. Inside which HTML element do we put the JavaScript?</p>
+            <ul class="options">
+                <li><input type="radio" name="q9" value="A"> &lt;script&gt;</li>
+                <li><input type="radio" name="q9" value="B"> &lt;js&gt;</li>
+                <li><input type="radio" name="q9" value="C"> &lt;scripting&gt;</li>
+            </ul>
+        </div>
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>10. Which HTML tag is used to define an internal style sheet?</p>
+            <ul class="options">
+                <li><input type="radio" name="q10" value="A"> &lt;css&gt;</li>
+                <li><input type="radio" name="q10" value="B"> &lt;script&gt;</li>
+                <li><input type="radio" name="q10" value="C"> &lt;style&gt;</li>
+            </ul>
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="submitQuiz()">Submit</button>
+    </form>
+
+    <div id="result" class="mt-4"></div>
+</div>
+
+<script>
+    function submitQuiz() {
+        var score = 0;
+        const totalQuestions = 10;
+
+        // Correct answers array
+        const correctAnswers = ["A", "C", "B", "C", "A", "A", "A", "A", "A", "C"];
+
+        // Loop through each question
+        for (var i = 1; i <= totalQuestions; i++) {
+            const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+            if (selectedOption && selectedOption.value === correctAnswers[i - 1]) {
+                score++;
+            }
+        }
+
+        // Display result
+        const resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = `<h4>Your Score: ${score}/${totalQuestions}</h4>`;
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+</body>
+</html>
